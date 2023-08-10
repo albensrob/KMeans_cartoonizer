@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>ToonID</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='design.css') }}">
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel = "icon"  href = "{{ url_for('static', filename='gamb/icon.png') }}" type = "image/x-icon">
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			setVisible('.page', false);
+		}, false);
+		
+		function onReady(callback) {
+		  var intervalId = window.setInterval(function() {
+			if (document.getElementsByTagName('body')!== undefined) {
+			  window.clearInterval(intervalId);
+			  callback.call(this);
+			}
+		  }, 1000);
+		}
+
+		function setVisible(selector, visible) {
+		  document.querySelector(selector).style.display = visible ? 'block' : 'none';
+		}
+		
+		onReady(function() {
+		  setVisible('.page', true);
+		  setVisible('#loading', false);
+		});
+	</script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="200">
+	<div id="loading"></div>
+	<div class="page" id="Home">
+		<nav class="navbar navbar-light bg-light fixed-top">
+			<div class="navbar navbar-expand">
+				<a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='gamb/icon.png') }}" width="40" height="40" class="d-inline-block">
+					ToonID</a>
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#Home">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#HowToUse">How to Use</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#feature">Feature</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<br/><br/>
+		<div id="bg" class="container-fluid" style="padding-top:70px;padding-bottom:170px">
+		  <h3 style="font-size:2vw ;padding-left:100px; padding-bottom:200px; font-family:'georgia'; font-weight:bold">ToonID</h3>
+		  <h3 class="font-weight-light" style="font-size:2vw ;padding-left:50px"><b>Convert Your Image to Cartoon</b></h3>
+		  <h1 class="font-weight-bolder" style="font-size:3vw; padding-left:50px; padding-bottom:50px;">With the Help of<br/>Machine Learning</h1>
+		  
+		  
+		  <a href="#HowToUse" class="btn btn-light rounded-pill" role="button" style="margin-left:50px">Get Started</a>
+
+		  
+		</div>
+		<div id="HowToUse" class="container-fluid" style="padding-top:70px;padding-bottom:200px">
+			<div class="row">
+				<div class="col-md">
+				  <h1 class="font-weight-light" style="padding-left:55px; padding-bottom:40px"><b>How to Use</b></h1>
+				  <h3 class="font-weight-light" style="padding-left:50px; padding-bottom:40px">
+				  <b>Just <a href="http://localhost:5000/upload">Click Here</a>, Upload Your Image, And Convert It.</b></h3>
+				  <h5><p class="font-weight-light" style="padding-left:55px; padding-bottom:40px">Easy Right?</p></h5><br><br>
+				</div>
+				<div class="col-md">
+					<div id="slide" class="col-md carousel slide carousel-fade" data-ride="carousel" data-touch="false">
+					  <div class="carousel-inner">
+						  <div class="row">
+								<div class="col-md d-flex align-items-center">
+									<div class="carousel-item active">
+										<img src="{{ url_for('static', filename='gamb/hasil_1.jpg') }}" class="w-50 center">
+									</div>
+									<div class="carousel-item">
+										<img src="{{ url_for('static', filename='gamb/hasil_2.jpg') }}" class="w-50 center">
+									</div>
+									<div class="carousel-item">
+										<img src="{{ url_for('static', filename='gamb/hasil_3.png') }}" class="w-50 center">
+									</div>
+								</div>
+						  </div>
+						<a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">previous</span>
+							<span class="bordericon"></span>
+						</a>
+						<a class="carousel-control-next" href="#slide" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">next</span>
+							<span class="bordericon"></span>
+						</a>
+					  	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="feature" class="container-fluid" style="padding-top:70px;padding-bottom:120px">
+			<div class="row">
+				<div class="col-md-11" style="margin-left:50px">
+				<h1 class="font-weight-light" style=" padding-bottom:40px; text-align:center"><b>Features</b></h1>
+					<div class="row">
+						<div class="col-md" id="ic1">
+							<div style="padding-top:100px; padding-bottom:50px">
+								<h3 class="font-weight-light text-center"><b>AI Generated</b></h3>
+								<p class="font-weight-light text-center">
+								This Application is using Artificial Inteligence to Convert your Images into Cartoon,</br>
+								So let our AI Cartoonize your Images.
+								</p>
+							</div>
+						</div>
+						<div class="col-md" id="ic2">
+							<div style="padding-top:100px; padding-bottom:50px">
+								<h3 class="font-weight-light text-center"><b>Compatible</b></h3>
+								<p class="font-weight-light text-center">
+								You can use this Web Application on any devices you want.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md" id="ic3">
+							<div style="padding-top:100px; padding-bottom:50px">
+								<h3 class="font-weight-light text-center"><b>Easy to Use</b></h3>
+								<p class="font-weight-light text-center">
+								Just upload your Image and with One-Click, your cartoonized Images are ready.
+								</p>
+							</div>
+						</div>
+						<div class="col-md" id="ic4">
+							<div style="padding-top:100px; padding-bottom:50px">
+								<h3 class="font-weight-light text-center"><b>Free to Use</b></h3>
+								<p class="font-weight-light text-center">
+								This is the most important thing, you can use this Image converter for FREE!
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="about" class="container-fluid" style="padding-bottom:230px">
+		 <h1 class="font-weight-light text-center" style="padding-bottom:100px"><b>About Us</b></h1>
+		 <h1 class="font-weight-light" style="padding-left:55px; padding-bottom:20px; font-family:serif"><b>ToonID</b></h1>
+		 <h4 class="font-weight-light" style="padding-left:50px;">
+		 	This Website was made for research purpose</br>
+			Created by</br>
+			Alben Roberto (32190095)</br>
+			Bunda Mulia University
+		 </h4>
+		</div>
+	</div>
+</body>
+</html>

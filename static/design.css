@@ -1,0 +1,128 @@
+.bordericon{
+	height:50px;
+	width:50px;
+	background:#111;
+	border-radius:50%;
+}
+
+#bg{
+	background-image:url("/static/gamb/bg.png");
+	background-size:cover;
+	background-repeat:no-repeat;
+	color:white;
+}
+
+@media(min-width: 768px){
+  #bg {
+    background-size: 100% auto;
+  }
+  #gambar1{
+    background-size: 100% auto;
+  }
+  body {
+    background-size: 100% auto;
+  }
+}
+@media(max-width: 767px){
+  #bg {
+    background-size: 100% 100%;
+  }
+  #gambar1{
+    background-size: 100% 100%;
+  }
+  body {
+    background-size: 100% 100%;
+  }
+}
+
+
+#ic1{
+	background-image:url("/static/gamb/ai.png");
+	background-size:100px 100px;
+	background-repeat:no-repeat;
+	background-position:center 0px;
+}
+
+#ic2{
+	background-image:url("/static/gamb/compatible.png");
+	background-size:100px 100px;
+	background-repeat:no-repeat;
+	background-position:center 0px;
+}
+
+#ic3{
+	background-image:url("/static/gamb/easy.png");
+	background-size:100px 100px;
+	background-repeat:no-repeat;
+	background-position:center 0px;	
+}
+
+#ic4{
+	background-image:url("/static/gamb/free.png");
+	background-size:100px 100px;
+	background-repeat:no-repeat;
+	background-position:center 0px;	
+}
+
+#about{
+	color:black;
+	padding-top:70px; 
+	padding-bottom:200px; 
+	background-color:#b9db81
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+*{
+	outline:none;
+}
+
+img{
+	pointer-events:none;
+}
+
+body {
+  position:relative;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+	position:absolute;
+}
+
+.carousel.carousel-fade .carousel-item {
+    display: block !important;
+    opacity: 0 !important;
+    transition: opacity ease-out .5s !important;
+
+}
+
+.carousel.carousel-fade .carousel-item.active {
+    opacity: 1 !important;
+}
+
+
+#loading {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(192, 192, 192, 0.5);
+  background-image: url("https://i.stack.imgur.com/MnyxU.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
